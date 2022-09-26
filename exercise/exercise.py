@@ -1,10 +1,7 @@
-print(6 + 4 / 2 - (1 * 2))
-#expected result
-#6.0
+print("Welcom to the rollercoaster!")
+height = int(input("What is your height in cm? "))
 
-a = int("5") / int(2.7)
-b = int(2.7)
-#expected answer
-#2
-print(a)
-print(b)
+if height != 120:
+    print("You can ride the rollercoaster!")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
