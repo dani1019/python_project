@@ -1,7 +1,6 @@
-print("Welcom to the rollercoaster!")
-height = int(input("What is your height in cm? "))
+num = int(input("Which number do you want to check? "))
 
-if height != 120:
-    print("You can ride the rollercoaster!")
+if num % 2 == 0:
+    print("This is even number.")
 else:
-    print("Sorry, you have to grow taller before you can ride.")
+    print("This is an odd number.")
