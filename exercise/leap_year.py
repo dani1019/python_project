@@ -1,7 +1,18 @@
 #enter year that user want to check
-input("Which year do you want to check? ")
+year = int(input("Which year do you want to check? "))
 
 #check whether if leap year
-#if year is divisible by 4
-#Not if year is divisible by 100
-#if year is divisible by 400
+#on every year that is evenly divisible by 4 
+#**except** every year that is evenly divisible by 100 
+#unless** the year is also evenly divisible by 400
+
+if year % 4 ==0:
+    if year % 100 ==0:
+        if year % 400 == 0:
+            print("Leap year.")
+        else:
+            print("Not leap year.")
+    else:
+        print("Leap year.")
+else:
+    print("Not leap year.")
