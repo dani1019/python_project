@@ -28,16 +28,17 @@ for i in word_love:
     love_count += lower_their_name.count(i)
 
 print(love_count)
-# my_name.count('t')
-# my_name.count('r')
-# my_name.count('u')
-# my_name.count('e')
 
-# their_name.count('t')
-# their_name.count('r')
-# their_name.count('u')
-# their_name.count('e')
+#ture_count,love_count convert string
+#str(ture_count + love_count) = score
+score_string= str(true_count) + str(love_count)
+score_int = int(score_string)
 
-#count the times of letter that [L,O,V,E] from Two people's name
-
+#depending on condition, print result
+if score_int < 10 or score_int > 90:
+    print(f"Your score is {score_string}, you go together like coke and mentos.")
+elif score_int >= 40 and score_int <= 50:
+    print(f"Your score is {score_string}, you are alright together.")
+else:
+    print(f"Your score is {score_string}.")
 
