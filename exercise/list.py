@@ -1,16 +1,42 @@
-city_list = ['tokyo','osaka','yamagata']
+#methods of list
+city_list = ['osaka','tokyo']
 
-print(city_list[2])
+#method of extend
+city_list.extend(['fukuoka','sappro','tokyo'])
 
-city_list[2] = 'miyazaki'
-print(city_list[2])
+print(f"city_list_expend {city_list}")
 
-city_list.extend(['nagoya','fukuoka'])
+#method pf append
+city_list.append('nagoya')
 
-for i in range(len(city_list) -1):
-    print(city_list)
+print(f"city_list_append {city_list}")
 
-city_list.append('sapporo')
+#method of insert
+city_list.insert(2,'miyazaki')
 
-for i in range(len(city_list) -1):
-    print(city_list)
+print(f"city_list_insert {city_list}")
+
+#count of city_list's word
+print(city_list.count('tokyo'))
+
+city_list.sort()
+
+print(f"sort of city_list {city_list}")
+
+city_list.reverse()
+
+print(f"reverse of city_list {city_list}")
+
+print(city_list.pop())
+
+print(city_list)
+
+print(city_list.index('tokyo'))
+
+stack = [3,4,5]
+stack.append(6)
+
+print(stack)
+
+stack.pop()
+print(stack)
