@@ -1,6 +1,7 @@
-num = int(input("Which number do you want to check? "))
+korean_city = ['Seoul','Kyungi','Jeju']
+japan_city = ['Tokyo','Osaka','Kyoto']
 
-if num % 2 == 0:
-    print("This is even number.")
-else:
-    print("This is an odd number.")
+city = [japan_city, korean_city]
+city_2 = [korean_city,japan_city]
+
+print(city_2)
