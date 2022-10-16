@@ -15,20 +15,21 @@ print(f"{select_num}\n{list_thing[select_num]}")
 
 #process random selection for computer's
 random_select = random.choice(list_thing)
-random_select_index = list_thing[random_select]
-print(f"Compuer  chose:\n {random_select}")
+print(random_select)
+print(list_thing[random_select])
+# print(f"Compuer  chose:\n {random_select}")
 
 #judge whether if user win
 #rock 0 < paper 1
 #rock 0 > scissors 2
 #paper 1 < scissors 2
-if select_num > random_select:
-    if(select_num == 0) and (random_select_index == 2):
-        print("You lose.")
-    else:
-        print("You win.")
-else:
-    print("You lose.")
+# if select_num > random_select_index:
+#     if(select_num == 0) and (random_select_index == 2):
+#         print("You lose.")
+#     else:
+#         print("You win.")
+# else:
+#     print("You lose.")
         
 #rock 0, paper 1, scissors 2
 
