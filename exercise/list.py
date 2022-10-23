@@ -24,19 +24,6 @@ city_list.sort()
 print(f"sort of city_list {city_list}")
 
 city_list.reverse()
-
-print(f"reverse of city_list {city_list}")
-
-print(city_list.pop())
-
-print(city_list)
-
-print(city_list.index('tokyo'))
-
-stack = [3,4,5]
-stack.append(6)
-
-print(stack)
-
-stack.pop()
-print(stack)
+fruits = ["apple", "Peach", "Pear"]
+for fruit in fruits:
+    print(fruit)

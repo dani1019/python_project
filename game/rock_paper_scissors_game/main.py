@@ -5,10 +5,28 @@ import sys
 #mark quesiton for user to enter the number
 select_num =  input("What do  you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n")
 
-#print try again when user entering character is empty or over 2 or string  
+#print try again when user entering character is empty or over 2 or string
+#if string entered marks try again
+#if num entered is over 2 marks try again
+
+#if literal entered is empty
+if select_num == '':
+    print("Please enter letter")
+    sys.exit()
+else:
+    #if literal entered is string 
+    if select_num.isdigit() == False:
+        print("Please enter number")
+        sys.exit()
+#   if literal entered is integer
+    else:
+        if(int(select_num) > 2):
+            print("Please enter number lower 3.")
+            sys.exit()
+
 if select_num == '' or int(select_num) > 2 or select_num.isdigit() == False:
     print("try again。")
-    sys.exit()
+
 
 #change character entered by user string to integer
 select_num_int = int(select_num)
@@ -56,3 +74,5 @@ elif select_num_int > random_select_index:
     print("You win") 
 elif select_num_int < random_select_index:
     print("You lose")
+else:
+    print("tie")
