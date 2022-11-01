@@ -28,6 +28,11 @@ result_list = letter_list + symbol_list + number_list
 
 print(result_list)
 
-#convert result_list to string
+#result_list rearrange index randomly
+random.shuffle(result_list)
 
-#randomize the letters of string
+print(shuffled_list)
+
+#convert result_list to string
+converted_string = ''.join(result_list)
+print(converted_string)
