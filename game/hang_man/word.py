@@ -1,5 +1,6 @@
 word_list = [
- 'ronaldo' ,
+ 'ronaldr' ,
  'rooney',
- 'beckham',
+ 'beckbam',
+ 'messi'
 ]
