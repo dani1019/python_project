@@ -24,17 +24,22 @@ enter_letter = input("Guess a letter: ")
 #elif entered letter is incorrect, lose a life
 #print(f"You guessed {enter_letter}, that's not in the word. You lose a life.")
 
-same_index = []
+wrong_count = 7
 
 #check if answer_word contains entered letter
 if enter_letter in answer_word:
     print("enter_letter")
     for index,answer_char in enumerate(list(answer_word)):
-        #if answer_word contains entered letter, index of answer_word put same_index
+        #if enter_letter is included answer_char,
+        # print the index,letter of answer_word, save print_word[index] = letter
         if enter_letter == answer_char:
-            same_index.append(index,answer_char)
+            print_word[index] = answer_char
 
-print(same_index)
+#minus wrong_count and print hang's picture
+else:
+    wrong_count -= 1
+    print(art.stages[wrong_count])
+print(''.join(print_word))
 
 
 #Are all the blacks filed
