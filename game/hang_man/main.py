@@ -24,22 +24,32 @@ enter_letter = input("Guess a letter: ")
 #elif entered letter is incorrect, lose a life
 #print(f"You guessed {enter_letter}, that's not in the word. You lose a life.")
 
-wrong_count = 7
+remained_chance = 7
+brank_letter = len(answer_word)
 
+print(f"brank_letter: {brank_letter}")
+
+check_game_end = True
+
+
+while check_game_end == True:
 #check if answer_word contains entered letter
-if enter_letter in answer_word:
-    print("enter_letter")
-    for index,answer_char in enumerate(list(answer_word)):
-        #if enter_letter is included answer_char,
-        # print the index,letter of answer_word, save print_word[index] = letter
-        if enter_letter == answer_char:
-            print_word[index] = answer_char
+    if enter_letter in answer_word:
+        print("enter_letter")
+        for index,answer_char in enumerate(list(answer_word)):
+            #if enter_letter is included answer_char,
+            # print the index,letter of answer_word, save print_word[index] = letter
+            if enter_letter == answer_char:
+                print_word[index] = answer_char
 
-#minus wrong_count and print hang's picture
-else:
-    wrong_count -= 1
-    print(art.stages[wrong_count])
-print(''.join(print_word))
+    #minus wrong_count and print hang's picture
+    else:
+        remained_chance -= 1
+        print(art.stages[remained_chance])
+        if remained_chance == 0:
+            print("Game Over")
+            break
+    print(''.join(print_word))
 
 
 #Are all the blacks filed
