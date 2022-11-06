@@ -17,30 +17,30 @@ for i in range(len(answer_word)):
 print(' '.join(print_word))
 
 #Ask the user to guess a letter
-enter_letter = input("Guess a letter: ")
+
 
 #Is the guessed letter in the word?
 #if entered letter is correct, replace the blank with the letter
 #elif entered letter is incorrect, lose a life
 #print(f"You guessed {enter_letter}, that's not in the word. You lose a life.")
+sum = 0
 
-remained_chance = 7
-brank_letter = len(answer_word)
+while True:
+    enter_letter = input("Guess a letter: ")
+    remained_chance = 7
+    brank_letter = len(answer_word)
 
-print(f"brank_letter: {brank_letter}")
+    print(f"brank_letter: {brank_letter}")
 
-check_game_end = True
-
-
-while check_game_end == True:
 #check if answer_word contains entered letter
-    if enter_letter in answer_word:
-        print("enter_letter")
+
+    if method.guess_letter() in answer_word:
+        print("1")
         for index,answer_char in enumerate(list(answer_word)):
             #if enter_letter is included answer_char,
             # print the index,letter of answer_word, save print_word[index] = letter
-            if enter_letter == answer_char:
-                print_word[index] = answer_char
+            print_word[index] = answer_char
+            print(print_word[index])
 
     #minus wrong_count and print hang's picture
     else:
@@ -49,7 +49,7 @@ while check_game_end == True:
         if remained_chance == 0:
             print("Game Over")
             break
-    print(''.join(print_word))
+    print(' '.join(print_word))
 
 
 #Are all the blacks filed
