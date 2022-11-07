@@ -23,28 +23,34 @@ print(' '.join(print_word))
 sum = 0
 
 flag = True
+remained_chance = 7
 while flag == True:
     enter_letter = input("Guess a letter: ")
-    remained_chance = 7
     brank_letter = len(answer_word)
-
-    print(f"brank_letter: {brank_letter}")
 
 #check if answer_word contains entered letter
     if enter_letter in answer_word:
         for index,answer_char in enumerate(list(answer_word)):
+            print(f"index: {index}")
             #if enter_letter is included answer_char,
             # print the index,letter of answer_word, save print_word[index] = letter
             if enter_letter == answer_char:
                 print_word[index] = answer_char
-                print(print_word[index])
+            #bug 맨 나중에 중간의 알파벳을 입력하면, Congratulation! Mission Complete!"가 복수로 출력된다.
             if print_word.count("-") == 0:
+                print("start")
                 print("Congratulation! Mission Complete!")
+                print("end")
                 flag = False
+#
+#if enter_word: r in answer_word 'ronaldo'
+# loop answer_word = {r,o,n,a,l,d,o} and check answer_char = enter_word
+# enter_word : r_____r
 
     #minus wrong_count and print hang's picture
     else:
         remained_chance -= 1
+        print(remained_chance)
         print(art.stages[remained_chance])
         if remained_chance == 0:
             print("Game Over")
