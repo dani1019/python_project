@@ -38,15 +38,10 @@ while flag == True:
                 print_word[index] = answer_char
             #bug 맨 나중에 중간의 알파벳을 입력하면, Congratulation! Mission Complete!"가 복수로 출력된다.
             if print_word.count("-") == 0:
-                print("start")
                 print("Congratulation! Mission Complete!")
-                print("end")
                 flag = False
-#
-#if enter_word: r in answer_word 'ronaldo'
-# loop answer_word = {r,o,n,a,l,d,o} and check answer_char = enter_word
-# enter_word : r_____r
-
+                print("1")
+                break
     #minus wrong_count and print hang's picture
     else:
         remained_chance -= 1
