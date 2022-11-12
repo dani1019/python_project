@@ -15,12 +15,31 @@ changed_result = []
 if type_crypt == "encode":
     for message_chr in list(message):
         char_ord = ord(message_chr)
-        #A change Z
-        if ord(message_chr) == 65:
-            char_ord = ord("Z") + 1
-        #a change z    
-        elif ord(message_chr) == 97:
-            char_ord = ord("z") + 1
-        char_ord = char_ord - number
-        changed_result.append(chr(char_ord))
+        changed_char_ord = char_ord - number
+        #A~Z
+        if message_chr.isupper():
+            if changed_char_ord - 65 < 0:
+                changed_result.append(chr(changed_char_ord + 25))
+            else:
+                changed_result.append(chr(changed_char_ord))
+        else:
+            #a~z
+            if changed_char_ord - 97 < 0:
+                changed_result.append(chr(changed_char_ord + 25))
+            else:
+                changed_result.append(chr(changed_char_ord))
+
+print(''.join(changed_result))
+
+
+
+        #A 65 Z 90
+        #a 97 z 122
+        # if ord(message_chr) == 65:
+        #     char_ord = ord("Z") + 1
+        # #a change z    
+        # elif ord(message_chr) == 97:
+        #     char_ord = ord("z") + 1
+        # char_ord = char_ord - number
+        # changed_result.append(chr(char_ord))
 print(''.join(changed_result))
