@@ -1,5 +1,10 @@
-#print make user enter encode or decode
+import sys#
+# 
 type_crypt = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n" ).lower()
+
+if type_crypt != "encode" or type_crypt != "decode":
+    print("enter encode or decode!!!")
+    sys.exit()
 
 #user enter message which want to move character
 message = input("Type your message:\n")
@@ -19,27 +24,29 @@ if type_crypt == "encode":
         #A~Z
         if message_chr.isupper():
             if changed_char_ord - 65 < 0:
-                changed_result.append(chr(changed_char_ord + 25))
+                changed_result.append(chr(changed_char_ord + 26))
             else:
                 changed_result.append(chr(changed_char_ord))
         else:
             #a~z
             if changed_char_ord - 97 < 0:
-                changed_result.append(chr(changed_char_ord + 25))
+                changed_result.append(chr(changed_char_ord + 26))
             else:
                 changed_result.append(chr(changed_char_ord))
+else:
+    for message_chr in list(message):
+        char_ord = ord(message_chr)
+        changed_char_ord = char_ord + number
+        if message_chr.isupper():
+            if changed_char_ord - 90 > 0:
+                changed_result.append(chr(changed_char_ord - 26))
+            else:
+                changed_result.append(chr(changed_char_ord))                
+        else:
+            #a~z
+            if changed_char_ord - 122 > 0:
+                changed_result.append(chr(changed_char_ord + 26))
+            else:
+                changed_result.append(chr(changed_char_ord))   
 
-print(''.join(changed_result))
-
-
-
-        #A 65 Z 90
-        #a 97 z 122
-        # if ord(message_chr) == 65:
-        #     char_ord = ord("Z") + 1
-        # #a change z    
-        # elif ord(message_chr) == 97:
-        #     char_ord = ord("z") + 1
-        # char_ord = char_ord - number
-        # changed_result.append(chr(char_ord))
 print(''.join(changed_result))
