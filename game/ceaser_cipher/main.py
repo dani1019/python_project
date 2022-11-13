@@ -2,7 +2,8 @@ import sys#
 # 
 type_crypt = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n" ).lower()
 
-if type_crypt != "encode" or type_crypt != "decode":
+#check if encode or decode
+if type_crypt not in ("encode","decode"):
     print("enter encode or decode!!!")
     sys.exit()
 
@@ -16,7 +17,6 @@ number = int(input("Type the shift number:\n"))
 
 changed_result = []
 
-#A,a의 경우, Z,z~로 잘 변환되지만, 그외의 글자는 변환이 잘못되는 버그가 일어난다.
 if type_crypt == "encode":
     for message_chr in list(message):
         char_ord = ord(message_chr)
@@ -47,6 +47,6 @@ else:
             if changed_char_ord - 122 > 0:
                 changed_result.append(chr(changed_char_ord + 26))
             else:
-                changed_result.append(chr(changed_char_ord))   
+                changed_result.append(chr(changed_char_ord))
 
 print(''.join(changed_result))
