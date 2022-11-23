@@ -5,9 +5,7 @@ print("Welcome to the secret auction program")
 #question user's name
 
 user_info = {}
-
 ep.enter_inform()
-
 continue_flag = True
 
 #questsion there is other bidders?
