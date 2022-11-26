@@ -10,14 +10,17 @@ continue_flag = True
 
 #questsion there is other bidders?
 while continue_flag == True:
-    exist_other_bidders = input("Are there any other bidders? Type 'yes' or 'no.'")
+    exist_other_bidders = input("Are there any other bidders? Type 'yes' or 'no.' ")
     #if user answer yes, entered infrom is deleted, other user can answer the question
     if exist_other_bidders == "yes":
         #clear entered inform before
         system('cls')
         ep.enter_inform()
 
-    else:
-        print(f"The winner is James with a bid of $142.")
+    elif exist_other_bidders == "no":
+        max_name, max_price = ep.result_max()
+        print(f"The winner is {max_name} with a bid of ${max_price}.")
         continue_flag = False
+    else:
+        print("please enter yes or no.")
         
