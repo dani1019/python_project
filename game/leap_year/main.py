@@ -5,17 +5,20 @@
 
 year = int(input("Which year do you want to check? "))
 
-#leap year
-#evenly divisible by 4 
-if year % 4 == 0:
-    #*except** evenly divisible by 100
-    if year % 100 != 0:
-        #evenly divisible by 400
-        if year % 400 == 0:
-            print("leap year")
+def is_leap():
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return False
+            else:
+                return True
         else:
-            print("not leap year")
+            return False
     else:
-        print("not leap year")
+        return True
+
+#if value of return is false, leap year
+if not is_leap():
+    print("leap year")
 else:
     print("not leap year")
