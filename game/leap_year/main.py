@@ -3,22 +3,15 @@
 #**except** every year that is evenly divisible by 100
 #**unless** the year is also evenly divisible by 400
 
-year = int(input("Which year do you want to check? "))
+import process as pr
 
-def is_leap():
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 == 0:
-                return False
-            else:
-                return True
-        else:
-            return False
-    else:
-        return True
+year = int(input("Which year do you want to check? "))
+month = int(input("Which month do yo want to check? "))
 
 #if value of return is false, leap year
-if not is_leap():
+if not pr.is_leap(year):
     print("leap year")
+    pr.days_in_month(year,month,pr.is_leap(year))
 else:
     print("not leap year")
+    pr.days_in_month(year,month,pr.is_leap(year))
