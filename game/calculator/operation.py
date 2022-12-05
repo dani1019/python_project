@@ -1,3 +1,5 @@
+continue_flag = True
+
 #check if first_number is integer
 def number_check(number):
     #if entered string is not number mark "enter the number"
@@ -36,7 +38,6 @@ def enter_second_number():
             break
 
 def calculate(first_number, second_number, operation):
-    
     if operation == "+":
         result_number = first_number + second_number
     elif operation == "-":
@@ -48,12 +49,31 @@ def calculate(first_number, second_number, operation):
 
     print(f"{first_number} {operation} {second_number} = {result_number}")
 
-    #question if continue to operate
-    whether_continue_calculate(result_number)
+    return result_number
 
 def whether_continue_calculate(result_number):
     continue_check = input(f"Type 'y' to continue calculating with {result_number}, or type 'n'  to exit 'y' ")
+    global continue_flag
+    print(f"continue_flag: {continue_flag}")
     if continue_check == 'y':
-        return True
+        continue_flag == True
+        return continue_flag
     else:
-        return False
+        continue_flag == False
+        return continue_flag
+
+#처음 숫자입력
+#------------------------
+#두번째 숫자입력
+#연산 입력
+#연산 후 결과출력
+#연산 처리 더 할 지 질문
+
+#Yes이면 아래 처리 반복
+#------------------------
+#두번째 숫자입력
+#연산 입력
+#연산 후 결과출력
+#연산 처리 더 할 지 질문
+
+#No이면 그대로 종료
