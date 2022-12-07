@@ -11,7 +11,13 @@ while continue_flag:
     #question user to enter operation
     operation = op.enter_operation()
     #question user to enter second number
+    #bug 전 연산에서 나온 결과에 다시 연산을 해야하는데,
+    #첫 번쨰 입력한 숫자에 연산을 하게 된다.
     result_number = op.calculate(first_number, second_number, operation)
 
-    #버그-- no선택시, continue_flag == False가 되어야 하는데 안되고 있음
-    op.whether_continue_calculate(result_number)
+    #check if continue to calculate
+    #if stop to caculate return false
+    # if continue to calculate return true
+    result_flag = op.whether_continue_calculate(result_number)
+
+    continue_flag = result_flag
