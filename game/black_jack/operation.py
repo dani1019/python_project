@@ -38,44 +38,50 @@ def add_card(having_users_cards,having_computers_cards):
         #if sum of selected card is lower than 17, it should select one card.
         judge_lower_17(having_users_cards,having_computers_cards)
 
-flag_over_17 = True
 
+#합계에서 하나의 카드를 더한 후에도 유저 컴퓨터 어느 중하나라도, 17이하면 다시실행해야 함.
+#예 유저 17, 컴퓨터 10 → sum_user >= 17 and sum_com < 17
+# 유저 17, 컴퓨터 15  → sum_user >= 17 and sum_com < 17 카드하나 추가 
 #if sum of selected card is lower than 17, it should select one card.
 def judge_lower_17(having_users_cards,having_computers_cards):
+    flag_over_17 = True
+
     sum_user= sum(having_users_cards)
-    sum_com= sum(having_computers_cards)
-    
-    # while flag_over_17:
-    print(flag_over_17)
-    #the sum of user's cards < 17, the sum of computer's cards >=17
-    #→select one more user's card
-    if sum_user < 17 and sum_com >= 17:
-        having_users_cards += select_card(cd.user_cards, 1)
-        print(sum_user)
-        print(sum_com)
-    
-    #the sum of user's cards >= 17, the sum of computer's cards < 17
-    #→select one more computer's card     
-    elif sum_user >= 17 and sum_com < 17:
-        having_computers_cards +=  select_card(cd.computer_cards, 1)
-        print(sum_user)
-        print(sum_com)
-    
-    #the sum of user's cards < 17, the sum of computer's cards < 17
-    #→select both of cards     
-    elif sum_user < 17 and sum_com < 17:
-        having_users_cards += select_card(cd.user_cards, 1)
-        having_computers_cards +=  select_card(cd.computer_cards, 1)
-        print(sum_user)
-        print(sum_com)
-    
-    #the sum of user's cards > 17, the sum of computer's cards > 17
-    #→not select card
-    else:
-        pass   
-    
-    #print the result
-    print_result(having_users_cards,having_computers_cards)
+    sum_com= sum(having_computers_cards)   
+    while flag_over_17:
+        #the sum of user's cards < 17, the sum of computer's cards >=17
+        #→select one more user's card
+        if sum_user < 17 and sum_com >= 17:
+            having_users_cards += select_card(cd.user_cards, 1)
+            sum_user = sum(having_users_cards)
+
+            #if sum of user's cards harder than 16, while escape flag_over_17
+            if sum_user >= 17:
+                break
+
+        #the sum of user's cards >= 17, the sum of computer's cards < 17
+        #→select one more computer's card     
+        elif sum_user >= 17 and sum_com < 17:
+            having_computers_cards +=  select_card(cd.computer_cards, 1)
+            sum_com = sum(having_computers_cards)
+
+            #if sum of computer's cards harder than 16, while escape flag_over_17
+            if sum_com >= 17:
+                break
+
+        #the sum of user's cards < 17, the sum of computer's cards < 17
+        #→select both of cards     
+        elif sum_user < 17 and sum_com < 17:
+            having_users_cards += select_card(cd.user_cards, 1)
+            having_computers_cards +=  select_card(cd.computer_cards, 1)
+
+            sum_user = sum(having_users_cards)     
+            sum_com = sum(having_computers_cards)
+
+        #the sum of user's cards > 17, the sum of computer's cards > 17
+        #→not select card
+        else:
+            pass
 
 # def judge_sum_over_17(having_users_cards,having_computers_cards):
 
