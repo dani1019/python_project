@@ -37,26 +37,52 @@ def add_card(having_users_cards,having_computers_cards):
     else:
         #if sum of selected card is lower than 17, it should select one card.
         judge_lower_17(having_users_cards,having_computers_cards)
-        
+
+flag_over_17 = True
 
 #if sum of selected card is lower than 17, it should select one card.
 def judge_lower_17(having_users_cards,having_computers_cards):
-    #check if sum of user having cards is lower than 17.
-    if sum(having_users_cards) < 17:
-        having_users_cards += select_card(cd.user_cards, 1)
-        print_final_result(having_users_cards,having_computers_cards)
-    else:
-        print_final_result(having_users_cards,having_computers_cards)
+    sum_user= sum(having_users_cards)
+    sum_com= sum(having_computers_cards)
     
-    #check if sum of computer having cards is lower than 17.
-    if sum(having_computers_cards) < 17:
+    # while flag_over_17:
+    print(flag_over_17)
+    #the sum of user's cards < 17, the sum of computer's cards >=17
+    #→select one more user's card
+    if sum_user < 17 and sum_com >= 17:
+        having_users_cards += select_card(cd.user_cards, 1)
+        print(sum_user)
+        print(sum_com)
+    
+    #the sum of user's cards >= 17, the sum of computer's cards < 17
+    #→select one more computer's card     
+    elif sum_user >= 17 and sum_com < 17:
         having_computers_cards +=  select_card(cd.computer_cards, 1)
-        print_final_result(having_users_cards,having_computers_cards)
+        print(sum_user)
+        print(sum_com)
+    
+    #the sum of user's cards < 17, the sum of computer's cards < 17
+    #→select both of cards     
+    elif sum_user < 17 and sum_com < 17:
+        having_users_cards += select_card(cd.user_cards, 1)
+        having_computers_cards +=  select_card(cd.computer_cards, 1)
+        print(sum_user)
+        print(sum_com)
+    
+    #the sum of user's cards > 17, the sum of computer's cards > 17
+    #→not select card
     else:
-        print_final_result(having_users_cards,having_computers_cards)
+        pass   
+    
+    #print the result
+    print_result(having_users_cards,having_computers_cards)
 
-#print final result
-def print_final_result(having_users_cards,having_computers_cards):
+# def judge_sum_over_17(having_users_cards,having_computers_cards):
+
+
+
+#print the result
+def print_result(having_users_cards,having_computers_cards):
     print(f"Your final hand: {having_users_cards}")
     print(f"Computer's final hand: {having_computers_cards}")
 
