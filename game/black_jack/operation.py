@@ -35,12 +35,19 @@ def print_having_cards(users_card,computer_card):
 def add_card(having_users_cards,having_computers_cards):
     whether_add_card = input("Type 'y' to get another card type 'n' to pass: ")
     #사용자가 카드를 더 뽑고 싶을 때 처리
-        #select one card and add having_users_cards
-        having_users_cards += select_card(cd.user_cards, 1)
-        print(f"users's cards : {having_users_cards}")
+    if whether_add_card == "y":
+        #the sum of selected card is over 21,no more select the card.
+        if sum(having_users_cards) > 21:
+            print("because sum of your cards is over 21,you can't select card.")
+        else:
+            having_users_cards += select_card(cd.user_cards, 1)
+            #if sum of selected card is lower than 17, it should select one card.
+            judge_lower_17(having_users_cards,having_computers_cards)
     else:
         #if sum of selected card is lower than 17, it should select one card.
         judge_lower_17(having_users_cards,having_computers_cards)
+    
+    print_result(having_users_cards, having_computers_cards)
 
 
 #if sum of selected card is lower than 17, it should select one card.
@@ -80,8 +87,8 @@ def judge_lower_17(having_users_cards,having_computers_cards):
         else:
             flag_lower_17 = False
         
-    #print final result
-    print_result(user_card_list,computer_card_list)
+    #return user's cards and computer's card
+    return user_card_list,computer_card_list
 
 #print final result
 def print_result(having_users_cards,having_computers_cards):
