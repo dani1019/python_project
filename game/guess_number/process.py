@@ -42,10 +42,6 @@ def guess_number(selected_number,remained_chance):
         #3) print Too high or Too low
         if selected_number < guess_number:
             print("Too high")
-        #substract 1 from remained chance
-
-        #print remained chance
-
         elif selected_number > guess_number:
             print("Too low")
         #substract 1 from remained chance
@@ -54,3 +50,9 @@ def guess_number(selected_number,remained_chance):
         else:
             print(f"you are correct. the number is {selected_number}")
             repeat_flag = False
+            break
+        remained_chance -= 1
+        if remained_chance == 0:
+            print("Game Over")
+        else:
+            print_chance(remained_chance)
