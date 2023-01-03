@@ -1,4 +1,4 @@
-
+import process as pr
 #1.make a key,value name of list = {neymar, cobi,endo}
 #{
 # neymar: [a soccer player, Brazil, 50] ,
@@ -7,6 +7,7 @@
 
 #3.the random selecting compare A
 #select value from key
+pr.random_select()
 
 #4.the random selecting AgainB
 #select value from key
