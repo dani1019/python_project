@@ -1,10 +1,11 @@
 import information as info
 from random import *
-#the random selecting compare A
-#select value from key
+#randomly select compare A and AgainB
 def random_select():
-    print("aa")
-    #먼저 inform_list 이름이라는 key을 뽑고, 나중에 그에 해당하는
-    #value뽑도록 해야함
-    selected_list = sample(info.inform_list, 2)
-    # print(f"selected_list:  {selected_list}")
+    #get key of inform_list (get name)
+    selected_list = sample(list(info.inform_list.keys()),2)
+    print(f"selected_list:  {selected_list}")
+
+    return selected_list
+
+def print_subject(selected_list)

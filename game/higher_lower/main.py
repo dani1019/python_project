@@ -7,13 +7,13 @@ import process as pr
 
 #3.the random selecting compare A
 #select value from key
-pr.random_select()
-
 #4.the random selecting AgainB
 #select value from key
+selected_list= pr.random_select()
 
 #5.print compare A: neymar , a soccer player, from Brazil
 #6.print Again B : Cobi, a basketball player, from USA
+pr.print_subject(selected_list)
 #7.print Who has more followers Type 'A' or 'B'
 #8-1.if corrected answer will be print you are correct score +5 
 #8-2if wronged answer will be print you are wrong score -5
