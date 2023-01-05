@@ -8,4 +8,11 @@ def random_select():
 
     return selected_list
 
-def print_subject(selected_list)
+def print_subject(selected_list):
+    for name in selected_list:
+        print(f"name:  {name}")
+        list_result = info.inform_list[name]
+        print(f"list_result : {list_result}")
+
+        print(f"print compare A: {name} ")
+        
