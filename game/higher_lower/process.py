@@ -8,8 +8,13 @@ def random_select():
 
 #
 def print_subject(selected_list):
+    comparison_data = []
+    comparison_list = []
     for index,name in enumerate(selected_list) :
         person_inform = info.inform_list[name]
+        comparison_data.append(name)
+        comparison_data.append(person_inform[2])
+        comparison_list.append(comparison_data)
         if index == 0:
             print(f"compare A: {person_inform[0]}, from {person_inform[1]}")
         else:
@@ -17,3 +22,10 @@ def print_subject(selected_list):
             print(f"Against A: {person_inform[0]}, from {person_inform[1]}")           
 
     selected_person = input("Who has more followers? Type 'A' or 'B': ")
+
+    return selected_person,comparison_list
+
+def operate_comparison(selected_person,comparison_list):
+    for element in comparison_list:
+        print(element)
+
