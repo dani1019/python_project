@@ -32,8 +32,15 @@ def print_subject(selected_list):
 
 def operate_comparison(selected_person,only_comparison_data):
     for name, inform in only_comparison_data.items():
+        print(only_comparison_data["A"])
+        print(only_comparison_data["B"])
         if selected_person == "A":
             if only_comparison_data["A"][1] >  only_comparison_data["B"][1]:
-                print(f"you are correct. {only_comparison_data["A"][0]}  is more famous.")
+                print(f"you are correct. {only_comparison_data['A'][0]}  is more famous.")
+            else:
+                print("you are wrong.")
+        else:
+            if only_comparison_data["A"][1] <  only_comparison_data["B"][1]:
+                print(f"you are correct. {only_comparison_data['B'][0]}  is more famous.")
             else:
                 print("you are wrong.")
