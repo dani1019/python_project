@@ -1,17 +1,7 @@
+#select the drink and insert coin
+order_start()
 
-seleced_drink = input("What would you like? (espresso/latte/cappuccino): ")
-#1. if selecting the things you like to drink
-#enter the inserted coin.
-print("Please insert coin.")
-number_10_yen = int(input("How many 10yen?: "))
-number_100_yen  = int(input("How many 100yen?: "))
-
-#make the key, value[] of kind of drink
-#select the items that entered by user
-#operate remained coin in coffee machine with inserted coin.
-#print in change about money paid.
-print(f"Here is 10yen change")
-print(f"Here is your {seleced_drink} enjoy!")
+operate()
 
 
 #if you enter 'report' print the remain resources(water,milk,coffee,Money)

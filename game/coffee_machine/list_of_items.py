@@ -1,5 +1,12 @@
+coffee_machine = {
+    "water" : 1000,
+    "coffee" : 1000,
+    "milk" : 1000,
+    "coin" : 10000
+}
+
 kind_of_drink = {
-    "espresso" : {"water" : 50, "coffee" : 18 , "mlik" : 0, "coin" : 150},
-#latte : 200ml water,24g coffee,150ml milk, 140yen
-#cappuccino: 250ml water,22g coffee,100ml milk, 130yen
+    "espresso" : {"water" : 50, "coffee" : 180 , "mlik" : 0, "coin" : 150},
+    "latte": {"water": 24, "coffee" : 150, "milk" : 100, "coin": 140},
+    "cappuccino" : {"water": 22, "coffee" : 100, "milk": 80, "coin": 130}
 }
