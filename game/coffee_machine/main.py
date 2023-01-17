@@ -1,7 +1,8 @@
 #select the drink and insert coin
-order_start()
+import proccess as pr
+selected_menu,number_10_yen,number_100_yen = pr.order_start()
 
-operate()
+pr.operate(selected_menu,number_10_yen,number_100_yen)
 
 
 #if you enter 'report' print the remain resources(water,milk,coffee,Money)
