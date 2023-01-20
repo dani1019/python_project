@@ -18,26 +18,26 @@ def select_menu(selected_menu,number_10_yen,number_100_yen):
     else:
         #if user select espresso, execute calculating
         if selected_menu == "espresso":
-            calcute_quantity("espresso")
+            calcute_quantity("espresso",number_10_yen,number_100_yen)
         #if user select latte, execute calculating
         elif selected_menu == "latte":
-            calcute_quantity("latte")
+            calcute_quantity("latte",number_10_yen,number_100_yen)
         #if user select cappuccino, execute calculating
         else:
-            calcute_quantity("cappuccino")
-            lst.coffee_machine["water"] - lst.kind_of_drink["espresso"]["water"]
-            lst.coffee_machine["coffee"] - lst.kind_of_drink["espresso"]["coffee"]
-            lst.coffee_machine["milk"] - lst.kind_of_drink["espresso"]["milk"]
-            lst.coffee_machine["coin"] - lst.kind_of_drink["espresso"]["coin"]
+            calcute_quantity("cappuccino",number_10_yen,number_100_yen)
 
-            print(lst.coffee_machine["water"])
-            print(lst.coffee_machine["coffee"])
-            print(lst.coffee_machine["milk"])
-            print(lst.coffee_machine["coin"])
+#caculate sum of coffee machine's quantity to used quantity 
+def calcute_quantity(kind_of_juice,number_10_yen,number_100_yen):
+    for element in list(lst.coffee_machine):
+        if element == "coin":
+            inserted_coin = 10*number_10_yen + 100*number_100_yen
+            lst.coffee_machine[element] += inserted_coin
+        else:
+            #sum of coffee machine's quantity - used quantity
+            remained_quantity = lst.coffee_machine[element] - lst.kind_of_drink[kind_of_juice][element]
+            #add inserted  coin to sum of coffee machine's coin
 
-def calcute_quantity():
-    for index,matarial in enumerate(lst.coffee_machine):
-        print(coffee_machine[index])
+        print(f"{element} remained_quantity: {lst.coffee_machine[element]}")
 
 
 
