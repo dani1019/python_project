@@ -1,17 +1,27 @@
 import list_of_items as lst
 #select the drink and insert coin
 #return  selected_drink,number_10_yen,number_100_yen
+remained_coffee_machine= {}
+
 def order_start():
     #select the drinking
-    selected_menu = input("What would you like? (espresso/latte/cappuccino): ")
-    if selected_menu == "report":
-        #print remained quantity of coffee machine
-        #쓴 물량에 대해 적용이 안됨 2023/01/24
-        print_report()
-        return
-    else:
-        #move select screen
-        select_menu(selected_menu)
+    while(True):
+        selected_menu = input("What would you like? (espresso/latte/cappuccino): ")
+        if selected_menu == "report":
+            #print remained quantity of coffee machine
+            #쓴 물량에 대해 적용이 안됨 2023/01/24
+            print_report()
+        else:
+            #move select screen
+            select_menu(selected_menu)
+
+#print remained quantity of coffee machine
+def print_report():
+    for material ,quantity in lst.coffee_machine.items():
+        if (material == "coin"):
+            print(f"{material}: ￥{quantity}")
+        else:
+            print(f"{material}: {quantity}ml")
 
 #select menu and calculate quantity of coffee machince to used quantity
 def select_menu(selected_menu):
@@ -38,8 +48,16 @@ def calcute_quantity(kind_of_juice,number_10_yen,number_100_yen):
     for element in list(lst.coffee_machine):
         if element == "coin":
             inserted_coin = 10*number_10_yen + 100*number_100_yen
+            #2023/01/25 inserted coin 比較する saved coin
+            if inserted_coin > lst.coffee_machine[element]:
+                saved_coin = inserted_coin - lst.coffee_machine[element]
+                lst.coffee_machine[element] += saved_coin
+            elif inserted_coin < lst.coffee_machine[element]:
+                print("you insert more money.")
+                return
+
             #add inserted  coin to sum of coffee machine's coin
-            lst.coffee_machine[element] += inserted_coin
+            
             print(f"{element}: ￥{lst.coffee_machine[element]}")
             break;
         else:
@@ -47,11 +65,6 @@ def calcute_quantity(kind_of_juice,number_10_yen,number_100_yen):
             lst.coffee_machine[element] -= lst.kind_of_drink[kind_of_juice][element]
 
         print(f"{element}: {lst.coffee_machine[element]}ml")
-
-#print remained quantity of coffee machine
-def print_report():
-    for material ,quantity in lst.coffee_machine.items():
-        print(f"{material}: {quantity}ml")
 
     
 
