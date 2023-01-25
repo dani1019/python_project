@@ -6,7 +6,7 @@ coffee_machine = {
 }
 
 kind_of_drink = {
-    "espresso" : {"water" : 50, "coffee" : 180 , "milk" : 0, "coin" : 150},
-    "latte": {"water": 24, "coffee" : 150, "milk" : 100, "coin": 140},
+    "espresso" : {"water" : 50, "coffee" : 180 , "milk" : 0, "coin" : 110},
+    "latte": {"water": 24, "coffee" : 150, "milk" : 100, "coin": 120},
     "cappuccino" : {"water": 22, "coffee" : 100, "milk": 80, "coin": 130}
 }

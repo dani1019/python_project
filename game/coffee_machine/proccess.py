@@ -48,16 +48,17 @@ def calcute_quantity(kind_of_juice,number_10_yen,number_100_yen):
     for element in list(lst.coffee_machine):
         if element == "coin":
             inserted_coin = 10*number_10_yen + 100*number_100_yen
+            print(f"inserted_coin: {inserted_coin}")
+            print(f"price of things : {lst.kind_of_drink[kind_of_juice][element]}")
             #2023/01/25 inserted coin 比較する saved coin
-            if inserted_coin > lst.coffee_machine[element]:
-                saved_coin = inserted_coin - lst.coffee_machine[element]
+            if inserted_coin > lst.kind_of_drink[kind_of_juice][element]:
+                saved_coin = inserted_coin - lst.kind_of_drink[kind_of_juice][element]
                 lst.coffee_machine[element] += saved_coin
-            elif inserted_coin < lst.coffee_machine[element]:
+            elif inserted_coin < lst.kind_of_drink[kind_of_juice][element]:
                 print("you insert more money.")
                 return
 
             #add inserted  coin to sum of coffee machine's coin
-            
             print(f"{element}: ￥{lst.coffee_machine[element]}")
             break;
         else:
