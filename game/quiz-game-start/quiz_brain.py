@@ -4,14 +4,10 @@
 
 #print All Question not complete 2023/01/30
 class Question_Opearte:
-    def __init__(self, question_data):
-        self.question_data = question_data
+    def __init__(self, question_bank):
+        self.question_bank = question_bank
     
-    for index,question in enumerate(question_data):
-        q_text = question["text"]
-        q_answer = question["answer"]
-
-        print(question["text"][index])
-
+        for index,element in enumerate(question_bank):
+            print(question_bank[index].text)
 
 
