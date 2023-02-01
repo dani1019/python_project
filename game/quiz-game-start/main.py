@@ -9,4 +9,7 @@ for question in question_data:
     new_question = Question(q_text,q_answer)
     question_bank.append(new_question)
 
-Question_Opearte(question_bank)
+quiz_object = Question_Opearte(question_bank)
+quiz_object.print_question()
+
+
